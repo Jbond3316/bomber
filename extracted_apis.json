@@ -1,0 +1,330 @@
+{
+  "whatsapp": [
+    {
+      "url": "https://services.mxgrability.rappi.com/api/rappi-authentication/login/whatsapp/create",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://services.rappi.com/api/rappi-authentication/login/whatsapp/create",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://stratzy.in/api/web/whatsapp/sendOTP",
+      "method": "POST",
+      "src": "D.g.e"
+    }
+  ],
+  "sms": [
+    {
+      "url": "https://www.limeroad.com/auth/resend_otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://www.foxy.in/api/v2/users/send_otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://api.wakefit.co/api/consumer-sms-otp/",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://www.shemaroome.com/users/resend_otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://api.penpencil.co/v1/users/resend-otp?smsType=1",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://nxtgenapi.pokerbaazi.com/oauth/user/send-otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://app.kredily.com/ws/v1/accounts/send-otp/",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://mightyzeus.housing.com/api/gql?apiName=LOGIN_SEND_OTP_API&emittedFrom=client_buy_LOGIN&isBot=false&source=mobile",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://api.penpencil.co/v1/users/resend-otp?smsType=2",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://prod-api.refyne.co.in/auth/v2/send-otp",
+      "method": "POST",
+      "src": "D.g.e"
+    }
+  ],
+  "call": [
+    {
+      "url": "https://profile.swiggy.com/api/v3/app/request_call_verification",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://mxemjhp3rt.ap-south-1.awsapprunner.com/auth/otps/resend/voice",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://apigateway.apollo247.in/auth-service/getOTPOnCall",
+      "method": "POST",
+      "src": "D.g.e"
+    }
+  ],
+  "all_otp": [
+    {
+      "url": "https://www.limeroad.com/auth/resend_otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://www.foxy.in/api/v2/users/send_otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://route.smytten.com/discover_user/NewDeviceDetails/addNewOtpCode",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://api.shadowfax.in/delivery/otp/send/v2/",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://api.kpnfresh.com/s/authn/api/v1/otp-generate?channel=AND&version=3.0.3",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://antheapi.aakash.ac.in/api/generate-lead-otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://api.wakefit.co/api/consumer-sms-otp/",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://api.beepkart.com/buyer/api/v2/public/leads/buyer/otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://user-auth.otpless.app/v2/lp/user/transaction/intent/e51c5ec2-6582-4ad8-aef5-dde7ea54f6a3",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://sr-wave-api.shiprocket.in/v1/customer/auth/otp/send",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://gkx.gokwik.co/v3/gkstrict/auth/otp/send",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://api-prod.bewakoof.com/v3/user/auth/login/otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://api-gateway.juno.lenskart.com/v3/customers/sendOtp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://www.shemaroome.com/users/resend_otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://api.kpnfresh.com/s/authn/api/v1/otp-generate?channel=WEB&version=1.0.0",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://api.kpnfresh.com/s/authn/api/v1/otp-generate?channel=AND&version=3.2.6",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://api.bikefixup.com/api/v2/send-registration-otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://stratzy.in/api/web/auth/sendPhoneOTP",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://stratzy.in/api/web/whatsapp/sendOTP",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://communication.api.hungama.com/v1/communication/otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://mxemjhp3rt.ap-south-1.awsapprunner.com/auth/otps/v2",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://api.penpencil.co/v1/users/resend-otp?smsType=1",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://hyuga-auth-service.pratech.live/v1/auth/otp/generate",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://production.apna.co/api/userprofile/v1/otp/",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://nma.nuvamawealth.com/edelmw-content/content/otp/register",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://nxtgenapi.pokerbaazi.com/oauth/user/send-otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://api.khatabook.com/v1/auth/request-otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://app.kredily.com/ws/v1/accounts/send-otp/",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://oidc.agrevolution.in/auth/realms/dehaat/custom/sendOTP",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://www.samsung.com/in/api/v1/sso/otp/init",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://www.shoppersstop.com//services/v2_1/ssl/sendOTP/OB",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://mightyzeus.housing.com/api/gql?apiName=LOGIN_SEND_OTP_API&emittedFrom=client_buy_LOGIN&isBot=false&source=mobile",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://m.snapdeal.com/sendOTP",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://customer.rapido.bike/api/otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://api.penpencil.co/v1/users/resend-otp?smsType=2",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://mxemjhp3rt.ap-south-1.awsapprunner.com/auth/otps/resend/voice",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://www.rummycircle.com/api/fl/account/v1/sendOtp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://apigateway.apollo247.in/auth-service/getOTPOnCall",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://prod-api.refyne.co.in/auth/v2/send-otp",
+      "method": "POST",
+      "src": "D.g.e"
+    },
+    {
+      "url": "https://prodapi.newme.asia/web/otp/request",
+      "method": "?",
+      "src": "eVar2.q"
+    },
+    {
+      "url": "https://cf.citymall.live/api/cl-user/auth/get-otp",
+      "method": "?",
+      "src": "eVar2.q"
+    },
+    {
+      "url": "https://www.myimaginestore.com/mobilelogin/index/registrationotpsend/",
+      "method": "?",
+      "src": "eVar2.q"
+    },
+    {
+      "url": "https://www.nobroker.in/api/v3/account/otp/send",
+      "method": "?",
+      "src": "eVar2.q"
+    },
+    {
+      "url": "https://www.cossouq.com/mobilelogin/otp/send",
+      "method": "?",
+      "src": "eVar2.q"
+    },
+    {
+      "url": "https://api.kreditbee.in/v1/me/otp",
+      "method": "?",
+      "src": "eVar2.q"
+    },
+    {
+      "url": "https://api.servetel.in/v1/auth/otp",
+      "method": "?",
+      "src": "eVar2.q"
+    },
+    {
+      "url": "https://app.medkart.in/api/v1/auth/requestOTP",
+      "method": "POST",
+      "src": "p.g"
+    },
+    {
+      "url": "https://api.testbook.com/api/v2/otp/send",
+      "method": "POST",
+      "src": "p.g"
+    }
+  ]
+}

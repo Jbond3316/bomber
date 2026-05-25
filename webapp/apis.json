@@ -1,0 +1,418 @@
+{
+  "sms": [
+    {
+      "name": "antheapi.aakash.ac.in",
+      "url": "https://antheapi.aakash.ac.in/api/generate-lead-otp",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "api-gateway.juno.lenskart.com",
+      "url": "https://api-gateway.juno.lenskart.com/v3/customers/sendOtp",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "api-prod.bewakoof.com",
+      "url": "https://api-prod.bewakoof.com/v3/user/auth/login/otp",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json; charset=utf-8",
+      "headers": {
+        "preferred-location": "IN",
+        "api-token": "ZmQ2ODBhM2UzMzc0Zjg1YTExZGZmZTM0MTRmNzYyMmY6YTMyODBiM2YtYjczZi00OGFkLWFlZGMtNTVmOTNlYjk4ZGI3",
+        "app-version": "224",
+        "client-device-token": "ZmQ2ODBhM2UzMzc0Zjg1YTExZGZmZTM0MTRmNzYyMmY6YTMyODBiM2YtYjczZi00OGFkLWFlZGMtNTVmOTNlYjk4ZGI3",
+        "Content-Type": "application/json",
+        "Host": "api-prod.bewakoof.com",
+        "Connection": "Keep-Alive",
+        "Accept-Encoding": "gzip",
+        "User-Agent": "okhttp/4.9.2"
+      },
+      "category": "sms"
+    },
+    {
+      "name": "api.beepkart.com",
+      "url": "https://api.beepkart.com/buyer/api/v2/public/leads/buyer/otp",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {
+        "Accept": "application/json, text/plain, */*",
+        "Accept-Encoding": "gzip, deflate, br, zstd",
+        "Content-Type": "application/json",
+        "changesorigin": "product-listingpage",
+        "originid": "0",
+        "sec-ch-ua-mobile": "?1",
+        "appname": "Website",
+        "userid": "0",
+        "origin": "https://www.beepkart.com",
+        "sec-fetch-site": "same-site",
+        "sec-fetch-mode": "cors",
+        "sec-fetch-dest": "empty",
+        "referer": "https://www.beepkart.com/"
+      },
+      "category": "sms"
+    },
+    {
+      "name": "api.bikefixup.com",
+      "url": "https://api.bikefixup.com/api/v2/send-registration-otp",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "api.chemist180.com",
+      "url": "https://api.chemist180.com/api/customer/send-verification-code",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "api.doubtnut.com",
+      "url": "https://api.doubtnut.com/v4/student/login",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json; charset=utf-8",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "api.khatabook.com",
+      "url": "https://api.khatabook.com/v1/auth/request-otp",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json; charset=utf-8",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "api.kpnfresh.com",
+      "url": "https://api.kpnfresh.com/s/authn/api/v1/otp-generate?channel=AND&version=3.0.3",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "api.kpnfresh.com",
+      "url": "https://api.kpnfresh.com/s/authn/api/v1/otp-generate?channel=WEB&version=1.0.0",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "api.kpnfresh.com",
+      "url": "https://api.kpnfresh.com/s/authn/api/v1/otp-generate?channel=AND&version=3.2.6",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "api.kreditbee.in",
+      "url": "https://api.kreditbee.in/v1/me/otp",
+      "method": "GET",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {
+        "Host": "api.kreditbee.in",
+        "accept": "application/json, text/plain, */*",
+        "authorization": "Bearer null",
+        "x-kb-info": "eyJsYXQiOiIwIiwibG5nIjoiMCIsImRpZCI6ImI0NjI3ODQ5YWM0MzEwMzkiLCJhcHB0eXBlIjoiYW5kcm9pZCIsImFwcHZlciI6IjIuMi4xIiwiaXNyb290ZWQiOiIxIn0=",
+        "user-agent": "Mozilla/5.0 (Linux; Android 9; Pixel 4 Build/PQ3A.190801.002; wv) AppleWebKit/537.36 (KHTML, like Gecko) Version/4.0 Chrome/81.0.4044.117 Mobile Safari/537.36"
+      },
+      "category": "sms"
+    },
+    {
+      "name": "api.penpencil.co",
+      "url": "https://api.penpencil.co/v1/users/resend-otp?smsType=1",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json; charset=utf-8",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "api.penpencil.co",
+      "url": "https://api.penpencil.co/v1/users/resend-otp?smsType=2",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json; charset=utf-8",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "api.servetel.in",
+      "url": "https://api.servetel.in/v1/auth/otp",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {
+        "Content-Type": "application/x-www-form-urlencoded; charset=utf-8",
+        "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 13; Infinix X671B Build/TP1A.220624.014)",
+        "Host": "api.servetel.in",
+        "Connection": "Keep-Alive",
+        "Accept-Encoding": "gzip"
+      },
+      "category": "sms"
+    },
+    {
+      "name": "api.shadowfax.in",
+      "url": "https://api.shadowfax.in/delivery/otp/send/v2/",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json; charset=utf-8",
+      "headers": {
+        "authorization": "Token OR1ZPU7MXE5OYTNQM2UYG320XDUSFFOQOVEFZZXT291G96AEFU2J7EI2DBDL",
+        "referrer": "flash",
+        "version": "54",
+        "version-name": "2.10.2",
+        "accept-encoding": "gzip",
+        "user-agent": "okhttp/4.12.0"
+      },
+      "category": "sms"
+    },
+    {
+      "name": "api.testbook.com",
+      "url": "https://api.testbook.com/api/v2/otp/send",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "api.unacademy.com",
+      "url": "https://api.unacademy.com/v3/user/user_check/?enable-email=true",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "api.wakefit.co",
+      "url": "https://api.wakefit.co/api/consumer-sms-otp/",
+      "method": "POST",
+      "bodyTemplate": "{\"mobile\":\"{phone}\",\"whatsapp_opt_in\":1}",
+      "contentType": "application/json",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "apigateway.apollo247.in",
+      "url": "https://apigateway.apollo247.in/auth-service/getOTPOnCall",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "app.getswipe.in",
+      "url": "https://app.getswipe.in/api/user/mobile_login",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json; charset=utf-8",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "app.kredily.com",
+      "url": "https://app.kredily.com/ws/v1/accounts/send-otp/",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json; charset=utf-8",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "app.medkart.in",
+      "url": "https://app.medkart.in/api/v1/auth/requestOTP",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "auth.eka.care",
+      "url": "https://auth.eka.care/auth/init",
+      "method": "POST",
+      "bodyTemplate": "{\"payload\":{\"allowWhatsapp\":true,\"mobile\":\"+91{phone}\"},\"type\":\"mobile\"}",
+      "contentType": "application/json",
+      "headers": {
+        "Device-Id": "5df83c463f0ff8ff",
+        "Flavour": "android",
+        "Locale": "en",
+        "Version": "1382",
+        "Client-Id": "androidp",
+        "Content-Type": "application/json; charset=UTF-8",
+        "Accept-Encoding": "gzip, deflate",
+        "User-Agent": "okhttp/4.9.3"
+      },
+      "category": "sms"
+    },
+    {
+      "name": "cf.citymall.live",
+      "url": "https://cf.citymall.live/api/cl-user/auth/get-otp",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {
+        "Host": "cf.citymall.live",
+        "accept": "application/json, text/plain, */*",
+        "x-app-name": "CX",
+        "x-app-version": "1.42.2",
+        "x-app-version-cp": "1.42.2-cms-v2",
+        "x-app-version-code": "260",
+        "x-ios-app-code": "15"
+      },
+      "category": "sms"
+    },
+    {
+      "name": "communication.api.hungama.com",
+      "url": "https://communication.api.hungama.com/v1/communication/otp",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "customer.rapido.bike",
+      "url": "https://customer.rapido.bike/api/otp",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json; charset=utf-8",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "docon.co.in",
+      "url": "https://docon.co.in/api/v1/user/online-login",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json; charset=utf-8",
+      "headers": {},
+      "category": "sms"
+    },
+    {
+      "name": "ekyc.daycoindia.com",
+      "url": "https://ekyc.daycoindia.com/api/nscript_functions.php",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/x-www-form-urlencoded",
+      "headers": {
+        "Content-Length": "61",
+        "X-Requested-With": "XMLHttpRequest",
+        "User-Agent": "Mozilla/5.0 (Linux; Android 10; K) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Mobile Safari/537.36",
+        "Accept": "application/json, text/javascript, */*; q=0.01",
+        "Content-Type": "application/x-www-form-urlencoded; charset=UTF-8",
+        "sec-ch-ua-mobile": "?1",
+        "Origin": "https://ekyc.daycoindia.com",
+        "Sec-Fetch-Site": "same-origin",
+        "Sec-Fetch-Mode": "cors",
+        "Sec-Fetch-Dest": "empty",
+        "Referer": "https://ekyc.daycoindia.com/verify_otp.php",
+        "Accept-Encoding": "gzip, deflate, br, zstd"
+      },
+      "category": "sms"
+    },
+    {
+      "name": "entri.app",
+      "url": "https://entri.app/api/v3/users/check-phone/",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json; charset=utf-8",
+      "headers": {
+        "content-type": "application/json; charset=utf-8",
+        "accept-encoding": "gzip",
+        "user-agent": "okhttp/3.9.1"
+      },
+      "category": "sms"
+    }
+  ],
+  "whatsapp": [
+    {
+      "name": "services.mxgrability.rappi.com",
+      "url": "https://services.mxgrability.rappi.com/api/rappi-authentication/login/whatsapp/create",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json; charset=utf-8",
+      "headers": {
+        "Content-Type": "application/json; charset=utf-8",
+        "Accept-Encoding": "gzip",
+        "User-Agent": "okhttp/3.9.1"
+      },
+      "category": "whatsapp"
+    },
+    {
+      "name": "services.rappi.com",
+      "url": "https://services.rappi.com/api/rappi-authentication/login/whatsapp/create",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json",
+      "headers": {},
+      "category": "whatsapp"
+    },
+    {
+      "name": "stratzy.in",
+      "url": "https://stratzy.in/api/web/whatsapp/sendOTP",
+      "method": "POST",
+      "bodyTemplate": "{\"phoneNo\":\"{phone}\"}",
+      "contentType": "application/json",
+      "headers": {},
+      "category": "whatsapp"
+    }
+  ],
+  "call": [
+    {
+      "name": "Smartcoin IVR",
+      "url": "https://webapp.smartcoin.co.in/users/{phone}/otpVerification/requestOtp/REGISTRATION/IVR",
+      "method": "GET",
+      "bodyTemplate": null,
+      "contentType": null,
+      "headers": {
+        "checksum": "ZtXTydI0hOh0LkIc56SU3w==",
+        "user_platform": "ANDROID",
+        "User-Agent": "Dalvik/2.1.0 (Linux; U; Android 13; Infinix X671B Build/TP1A.220624.014)"
+      },
+      "category": "call",
+      "queryParams": {
+        "phoneNumber": "{phone}",
+        "phone_number": "{phone}",
+        "name": "null",
+        "device_id": "null",
+        "android_id": "73665b901e03fc91",
+        "rooted": "0",
+        "locale": "en",
+        "app_version": "607"
+      }
+    },
+    {
+      "name": "mxemjhp3rt.ap-south-1.awsapprunner.com",
+      "url": "https://mxemjhp3rt.ap-south-1.awsapprunner.com/auth/otps/resend/voice",
+      "method": "POST",
+      "bodyTemplate": null,
+      "contentType": "application/json; charset=utf-8",
+      "headers": {},
+      "category": "call"
+    }
+  ]
+}

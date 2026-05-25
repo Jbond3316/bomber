@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OTP API Console — from a.java</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <header>
+        <h1>OTP API Console</h1>
+        <p class="subtitle">
+          Web UI for the APIs in <code>a.java</code> (decompiled
+          <em>nextbomb.pro</em> services: SMS, WhatsApp, voice/call).
+        </p>
+      </header>
+
+      <section class="card input-card">
+        <label for="phone">Phone number</label>
+        <div class="phone-row">
+          <span class="prefix">+91</span>
+          <input
+            id="phone"
+            type="tel"
+            inputmode="numeric"
+            placeholder="9876543210"
+            maxlength="10"
+            autocomplete="tel"
+          />
+        </div>
+        <p class="hint">10-digit Indian mobile (country code +91 is applied like in the Java app).</p>
+
+        <div class="actions">
+          <button type="button" class="btn sms" data-type="sms">Send SMS OTP</button>
+          <button type="button" class="btn wa" data-type="whatsapp">Send WhatsApp OTP</button>
+          <button type="button" class="btn call" data-type="call">Trigger Call / IVR</button>
+        </div>
+
+        <label class="checkbox">
+          <input type="checkbox" id="sendAll" />
+          Hit all endpoints for this channel (parallel)
+        </label>
+      </section>
+
+      <section class="card catalog-card">
+        <h2>API catalog</h2>
+        <div id="catalog" class="catalog">Loading…</div>
+      </section>
+
+      <section class="card results-card">
+        <h2>Results</h2>
+        <div id="status" class="status idle">Enter a number and choose an action.</div>
+        <pre id="log" class="log"></pre>
+      </section>
+
+      <footer>
+        <p>
+          Extracted from <code>a.java</code> — case 3 CSService, case 4 MSService, case 5
+          TOAService, case 6 VSService. Requests are proxied server-side; many third-party
+          APIs may block or require auth.
+        </p>
+      </footer>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
