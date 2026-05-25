@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>OTP Bomber Pro</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --surface2: #1e1e1e;
+      --border: #2a2a2a;
+      --accent-sms: #00c853;
+      --accent-wa: #25d366;
+      --accent-call: #2196f3;
+      --text: #e8e8e8;
+      --muted: #888;
+      --danger: #f44336;
+      --radius: 12px;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 24px 16px 48px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 32px;
+    }
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #00c853, #25d366, #2196f3);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    header p {
+      color: var(--muted);
+      margin-top: 6px;
+      font-size: 0.9rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px 24px;
+      width: 100%;
+      max-width: 560px;
+    }
+
+    .field { margin-bottom: 20px; }
+    label { display: block; font-size: 0.82rem; color: var(--muted); margin-bottom: 7px; text-transform: uppercase; letter-spacing: 0.5px; }
+
+    .phone-wrap {
+      display: flex;
+      align-items: center;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      overflow: hidden;
+      transition: border-color 0.2s;
+    }
+    .phone-wrap:focus-within { border-color: var(--accent-sms); }
+    .phone-prefix {
+      padding: 0 12px;
+      font-size: 1rem;
+      color: var(--muted);
+      border-right: 1px solid var(--border);
+      height: 48px;
+      display: flex;
+      align-items: center;
+      background: var(--bg);
+    }
+    input[type="tel"] {
+      background: transparent;
+      border: none;
+      outline: none;
+      color: var(--text);
+      font-size: 1.05rem;
+      padding: 0 14px;
+      height: 48px;
+      flex: 1;
+      letter-spacing: 1px;
+    }
+
+    .count-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .count-wrap input[type="range"] {
+      flex: 1;
+      accent-color: var(--accent-sms);
+    }
+    .count-badge {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 4px 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      min-width: 42px;
+      text-align: center;
+      color: var(--accent-sms);
+    }
+
+    /* Mode tabs */
+    .tabs { display: flex; gap: 8px; margin-bottom: 20px; }
+    .tab-btn {
+      flex: 1;
+      padding: 11px 8px;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      background: var(--surface2);
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+    }
+    .tab-btn:hover { border-color: #444; color: var(--text); }
+    .tab-btn.active[data-mode="sms"]  { background: rgba(0,200,83,0.12); border-color: var(--accent-sms); color: var(--accent-sms); }
+    .tab-btn.active[data-mode="whatsapp"] { background: rgba(37,211,102,0.12); border-color: var(--accent-wa); color: var(--accent-wa); }
+    .tab-btn.active[data-mode="call"]  { background: rgba(33,150,243,0.12); border-color: var(--accent-call); color: var(--accent-call); }
+
+    .tab-icon { font-size: 1.1rem; }
+
+    /* Send button */
+    #sendBtn {
+      width: 100%;
+      padding: 14px;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: all 0.2s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+    #sendBtn.mode-sms   { background: var(--accent-sms); color: #000; }
+    #sendBtn.mode-whatsapp { background: var(--accent-wa); color: #000; }
+    #sendBtn.mode-call  { background: var(--accent-call); color: #fff; }
+    #sendBtn:hover:not(:disabled) { opacity: 0.85; transform: translateY(-1px); }
+    #sendBtn:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
+
+    .err-msg {
+      color: var(--danger);
+      font-size: 0.85rem;
+      margin-top: -14px;
+      margin-bottom: 14px;
+      display: none;
+    }
+    .err-msg.show { display: block; }
+
+    /* Stats bar */
+    .stats-bar {
+      display: none;
+      gap: 12px;
+      margin-top: 22px;
+      flex-wrap: wrap;
+    }
+    .stats-bar.show { display: flex; }
+    .stat-pill {
+      flex: 1;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      text-align: center;
+    }
+    .stat-pill .val { font-size: 1.5rem; font-weight: 800; }
+    .stat-pill .lbl { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; }
+    .val.success { color: var(--accent-sms); }
+    .val.failed  { color: var(--danger); }
+    .val.pending { color: #ff9800; }
+
+    /* Progress */
+    .progress-wrap { margin-top: 16px; display: none; }
+    .progress-wrap.show { display: block; }
+    .progress-bar-bg {
+      background: var(--surface2);
+      border-radius: 99px;
+      height: 6px;
+      overflow: hidden;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, var(--accent-sms), var(--accent-call));
+      border-radius: 99px;
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    .progress-label {
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 6px;
+      text-align: right;
+    }
+
+    /* Log area */
+    .log-section { margin-top: 28px; width: 100%; max-width: 560px; }
+    .log-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+    .log-header span { font-size: 0.82rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; }
+    .log-clear-btn {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+    .log-clear-btn:hover { color: var(--text); border-color: #555; }
+
+    #logList {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      max-height: 420px;
+      overflow-y: auto;
+      padding-right: 4px;
+    }
+    #logList::-webkit-scrollbar { width: 4px; }
+    #logList::-webkit-scrollbar-thumb { background: #333; border-radius: 99px; }
+
+    .log-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      font-size: 0.88rem;
+      animation: slideIn 0.2s ease;
+    }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateY(-4px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .log-item.ok { border-left: 3px solid var(--accent-sms); }
+    .log-item.fail { border-left: 3px solid var(--danger); }
+    .log-item.pending { border-left: 3px solid #ff9800; }
+    .log-name { font-weight: 600; flex: 1; }
+    .log-status {
+      font-size: 0.78rem;
+      padding: 2px 8px;
+      border-radius: 99px;
+      font-weight: 600;
+    }
+    .log-status.ok   { background: rgba(0,200,83,0.15); color: var(--accent-sms); }
+    .log-status.fail { background: rgba(244,67,54,0.15); color: var(--danger); }
+    .log-status.pending { background: rgba(255,152,0,0.15); color: #ff9800; }
+    .log-code { font-size: 0.75rem; color: var(--muted); min-width: 36px; text-align: right; }
+
+    /* API count badges */
+    .api-counts {
+      display: flex;
+      gap: 8px;
+      justify-content: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+    }
+    .api-badge {
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 99px;
+      padding: 4px 12px;
+      font-size: 0.78rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .api-badge span { font-weight: 700; }
+
+    .spinner {
+      display: inline-block;
+      width: 16px; height: 16px;
+      border: 2px solid rgba(255,255,255,0.3);
+      border-top-color: #fff;
+      border-radius: 50%;
+      animation: spin 0.7s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .spinner.dark {
+      border-color: rgba(0,0,0,0.3);
+      border-top-color: #000;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>💣 OTP Bomber Pro</h1>
+  <p>Multi-service OTP sender — SMS · WhatsApp · Voice Call</p>
+</header>
+
+<div id="apiCounts" class="api-counts">
+  <div class="api-badge">📱 <span id="smsCnt">…</span> SMS APIs</div>
+  <div class="api-badge">💬 <span id="waCnt">…</span> WhatsApp APIs</div>
+  <div class="api-badge">📞 <span id="callCnt">…</span> Call APIs</div>
+</div>
+
+<div class="card">
+  <!-- Mode tabs -->
+  <div class="tabs">
+    <button class="tab-btn active" data-mode="sms">
+      <span class="tab-icon">📱</span> SMS
+    </button>
+    <button class="tab-btn" data-mode="whatsapp">
+      <span class="tab-icon">💬</span> WhatsApp
+    </button>
+    <button class="tab-btn" data-mode="call">
+      <span class="tab-icon">📞</span> Call
+    </button>
+  </div>
+
+  <!-- Phone number -->
+  <div class="field">
+    <label>Phone Number</label>
+    <div class="phone-wrap">
+      <div class="phone-prefix">🇮🇳 +91</div>
+      <input type="tel" id="phoneInput" placeholder="9876543210" maxlength="10" autocomplete="off" />
+    </div>
+  </div>
+
+  <!-- Count -->
+  <div class="field">
+    <label>Repeat Count</label>
+    <div class="count-wrap">
+      <input type="range" id="countSlider" min="1" max="50" value="1" />
+      <div class="count-badge" id="countVal">1</div>
+    </div>
+  </div>
+
+  <div class="err-msg" id="errMsg"></div>
+
+  <button id="sendBtn" class="mode-sms">
+    <span class="tab-icon">📱</span>
+    <span id="btnLabel">Send SMS OTPs</span>
+  </button>
+
+  <!-- Progress -->
+  <div class="progress-wrap" id="progressWrap">
+    <div class="progress-bar-bg">
+      <div class="progress-bar-fill" id="progressFill"></div>
+    </div>
+    <div class="progress-label" id="progressLabel">0 / 0</div>
+  </div>
+
+  <!-- Stats -->
+  <div class="stats-bar" id="statsBar">
+    <div class="stat-pill">
+      <div class="val success" id="statSuccess">0</div>
+      <div class="lbl">Success</div>
+    </div>
+    <div class="stat-pill">
+      <div class="val failed" id="statFailed">0</div>
+      <div class="lbl">Failed</div>
+    </div>
+    <div class="stat-pill">
+      <div class="val pending" id="statPending">0</div>
+      <div class="lbl">Pending</div>
+    </div>
+    <div class="stat-pill">
+      <div class="val" id="statTotal" style="color:var(--text)">0</div>
+      <div class="lbl">Total</div>
+    </div>
+  </div>
+</div>
+
+<!-- Log section -->
+<div class="log-section" id="logSection" style="display:none">
+  <div class="log-header">
+    <span>Request Log</span>
+    <button class="log-clear-btn" onclick="clearLog()">Clear</button>
+  </div>
+  <div id="logList"></div>
+</div>
+
+<script>
+  const modeConfig = {
+    sms:       { icon: "📱", label: "Send SMS OTPs",       cls: "mode-sms"       },
+    whatsapp:  { icon: "💬", label: "Send WhatsApp OTPs",  cls: "mode-whatsapp"  },
+    call:      { icon: "📞", label: "Send Voice Calls",    cls: "mode-call"      },
+  };
+
+  let currentMode = "sms";
+  let isRunning = false;
+  let stats = { success: 0, failed: 0, pending: 0, total: 0 };
+
+  // Load API counts
+  fetch("/api/info").then(r => r.json()).then(d => {
+    document.getElementById("smsCnt").textContent  = d.sms;
+    document.getElementById("waCnt").textContent   = d.whatsapp;
+    document.getElementById("callCnt").textContent = d.call;
+  });
+
+  // Tabs
+  document.querySelectorAll(".tab-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      if (isRunning) return;
+      document.querySelectorAll(".tab-btn").forEach(b => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentMode = btn.dataset.mode;
+      updateSendBtn();
+    });
+  });
+
+  function updateSendBtn() {
+    const cfg = modeConfig[currentMode];
+    const btn = document.getElementById("sendBtn");
+    btn.className = cfg.cls;
+    btn.innerHTML = `<span>${cfg.icon}</span><span id="btnLabel">${cfg.label}</span>`;
+  }
+
+  // Range slider
+  const slider = document.getElementById("countSlider");
+  const countVal = document.getElementById("countVal");
+  slider.addEventListener("input", () => { countVal.textContent = slider.value; });
+
+  // Send
+  document.getElementById("sendBtn").addEventListener("click", startSend);
+  document.getElementById("phoneInput").addEventListener("keydown", e => {
+    if (e.key === "Enter") startSend();
+  });
+
+  function showError(msg) {
+    const el = document.getElementById("errMsg");
+    el.textContent = msg;
+    el.classList.add("show");
+  }
+  function clearError() {
+    document.getElementById("errMsg").classList.remove("show");
+  }
+
+  function clearLog() {
+    document.getElementById("logList").innerHTML = "";
+    document.getElementById("logSection").style.display = "none";
+  }
+
+  function resetStats() {
+    stats = { success: 0, failed: 0, pending: 0, total: 0 };
+    document.getElementById("statSuccess").textContent = "0";
+    document.getElementById("statFailed").textContent  = "0";
+    document.getElementById("statPending").textContent = "0";
+    document.getElementById("statTotal").textContent   = "0";
+  }
+
+  function updateStats() {
+    document.getElementById("statSuccess").textContent = stats.success;
+    document.getElementById("statFailed").textContent  = stats.failed;
+    document.getElementById("statPending").textContent = stats.pending;
+    document.getElementById("statTotal").textContent   = stats.total;
+  }
+
+  function addLogItem(result) {
+    const list = document.getElementById("logList");
+    document.getElementById("logSection").style.display = "block";
+
+    const ok = result.ok;
+    const code = result.status || "ERR";
+    const cls = ok ? "ok" : "fail";
+
+    const item = document.createElement("div");
+    item.className = `log-item ${cls}`;
+    item.innerHTML = `
+      <span class="log-name">${result.name || "Unknown"}</span>
+      <span class="log-status ${cls}">${ok ? "✓ Sent" : "✗ Failed"}</span>
+      <span class="log-code">${code}</span>
+    `;
+    list.prepend(item);
+  }
+
+  async function startSend() {
+    if (isRunning) return;
+
+    clearError();
+    const phone = document.getElementById("phoneInput").value.trim();
+    if (!/^\d{10}$/.test(phone)) {
+      showError("Please enter a valid 10-digit Indian mobile number.");
+      return;
+    }
+
+    const count = parseInt(slider.value, 10);
+    isRunning = true;
+    resetStats();
+
+    const btn = document.getElementById("sendBtn");
+    btn.disabled = true;
+    btn.innerHTML = `<span class="spinner ${currentMode === "call" ? "" : "dark"}"></span><span>Sending…</span>`;
+
+    document.getElementById("progressWrap").classList.add("show");
+    document.getElementById("statsBar").classList.add("show");
+    document.getElementById("logList").innerHTML = "";
+    document.getElementById("logSection").style.display = "block";
+
+    const fill  = document.getElementById("progressFill");
+    const label = document.getElementById("progressLabel");
+
+    try {
+      const resp = await fetch("/api/send", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone, mode: currentMode, count }),
+      });
+
+      if (!resp.ok) {
+        const err = await resp.json();
+        showError(err.error || "Server error");
+        return;
+      }
+
+      const reader = resp.body.getReader();
+      const decoder = new TextDecoder();
+      let buffer = "";
+
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const parts = buffer.split("\n\n");
+        buffer = parts.pop();
+
+        for (const part of parts) {
+          const line = part.trim();
+          if (!line.startsWith("data: ")) continue;
+          try {
+            const data = JSON.parse(line.slice(6));
+
+            if (data.type === "start") {
+              stats.total = data.total;
+              stats.pending = data.total;
+              label.textContent = `0 / ${data.total}`;
+              updateStats();
+              continue;
+            }
+
+            if (data.type === "done") {
+              fill.style.width = "100%";
+              label.textContent = `${data.total} / ${data.total} — Complete!`;
+              stats.pending = 0;
+              updateStats();
+              continue;
+            }
+
+            if (data.ok) stats.success++;
+            else         stats.failed++;
+            stats.pending = Math.max(0, stats.pending - 1);
+
+            const pct = Math.round((data.done / data.total) * 100);
+            fill.style.width = pct + "%";
+            label.textContent = `${data.done} / ${data.total}`;
+
+            updateStats();
+            addLogItem(data);
+          } catch (_) {}
+        }
+      }
+
+    } catch (err) {
+      showError("Connection error: " + err.message);
+    } finally {
+      isRunning = false;
+      btn.disabled = false;
+      updateSendBtn();
+    }
+  }
+</script>
+</body>
+</html>
